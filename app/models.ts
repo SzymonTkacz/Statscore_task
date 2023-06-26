@@ -12,9 +12,9 @@ export interface Event {
 
 
 export abstract class Sports {
-    static Soccer = "soccer";
-    static Volleyball = "volleyball";
-    static Handball = "handball";
-    static Basketball = "basketball";
-    static Tennis = "tennis";
+    static readonly Soccer = "soccer";
+    static readonly Volleyball = "volleyball";
+    static readonly Handball = "handball";
+    static readonly Basketball = "basketball";
+    static readonly Tennis = "tennis";
 }

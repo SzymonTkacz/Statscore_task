@@ -1,11 +1,12 @@
 //************************************
 //to run code type: npx ts-node app.ts
+//all methods are public for tests
 //************************************
 
 import { matches } from "./matches"
 import { Match, Sports, Event } from "./models"
 
-class EventParser {
+export class EventParser {
     private matchesArray: Match[] = []
 
     constructor() {
@@ -24,7 +25,7 @@ class EventParser {
         }
     }
 
-    private validateSport(match: Match): boolean {
+    public validateSport(match: Match): boolean {
         if(match.sport === Sports.Handball || match.sport === Sports.Tennis || match.sport === Sports.Basketball 
             || match.sport === Sports.Soccer || match.sport === Sports.Volleyball) 
             {
@@ -33,14 +34,14 @@ class EventParser {
         return false
     }
 
-    private makeEventName(match: Match): string {
+    public makeEventName(match: Match): string {
         if(match.sport === Sports.Handball || match.sport === Sports.Tennis) {
             return `${match.participant1} vs ${match.participant2}`
         }
         return `${match.participant1} - ${match.participant2}`
     }
 
-    private formatScore(match: Match): string {
+    public formatScore(match: Match): string {
         if(match.sport === Sports.Volleyball || match.sport === Sports.Tennis) {
             const scores: string[] = match.score.toString().split(",")
             let summary = `Main score: ${scores[0]}`
