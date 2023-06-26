@@ -20,7 +20,7 @@ class EventParser {
             if(match.sport === Sports.Basketball) {
                 match.score = JSON.stringify(match.score).replace(/[\[\]'"]+/g,'')
             }
-            this.matchesArray.push(match)
+            this.matchesArray.push(match as Match)
         }
     }
 
